@@ -9,10 +9,14 @@ CREATE TABLE cliente(
     email varchar(50), 
     PRIMARY KEY (id) );
 
-# Comandos
+# Comando para buildar imagens e criar containers
 
 - docker-compose up -d --build
 
-# acessar aplicação
+# Acessar a aplicação
 - http://localhost/home.php
+
+# Observação
+- A aplicação é estremamente básica, onde é utilzando apenas PHP + HTML. O intuito é mostrar como pode rodar uma aplicação PHP com docker.
+- Para uso em produção é necessário tomar politicas de segunça, tanto na aplicação quanto nos arquivos docker e docker-compose.
 
