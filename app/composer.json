@@ -1,0 +1,18 @@
+{
+    "name": "root/app",
+    "authors": [
+        {
+            "name": "Alisson Ferreira",
+            "email": "meugmail@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Code\\": "app/"
+      }
+    },
+    "require": {
+        "marcelog/pami": "^2.0",
+        "firebase/php-jwt": "^5.0"
+    }
+}

@@ -1,0 +1,54 @@
+version: '3.9'
+
+services: 
+
+  nginx:
+    build: 
+      context: .
+      dockerfile: Dockerfile.nginx
+    image: nginx:prod
+    container_name: nginx
+    networks: 
+      - crudnet
+    ports: 
+      - "80:80"
+    depends_on:
+      - db
+  
+  db:
+    image: mysql:8.0
+    hostname: db
+    container_name: db
+    restart: always
+    command: ["--default-authentication-plugin=mysql_native_password", "--max_connections=500"]
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: 'crud'
+      MYSQL_USER: 'alisson'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'   
+    networks:
+    - crudnet
+
+  php-fpm:
+    read_only: true
+    hostname: php-fpm
+    container_name: php-fpm
+    image: php-fpm
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.php-fpm
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - crudnet
+    depends_on:
+      - db
+      
+networks: 
+  crudnet:
+    driver: bridge      

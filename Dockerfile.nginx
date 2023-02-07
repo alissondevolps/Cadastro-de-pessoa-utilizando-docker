@@ -1,0 +1,9 @@
+FROM nginx:1.15.0-alpine
+
+WORKDIR /usr/share/nginx/html/
+
+ENV TZ=America/Fortaleza
+
+COPY --chown=nginx:nginx ./nginx/default.conf /etc/nginx/conf.d
+
+EXPOSE 80
