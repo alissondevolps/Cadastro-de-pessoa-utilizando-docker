@@ -18,5 +18,5 @@ CREATE TABLE cliente(
 
 # Observação
 - A aplicação é extremamente básica, onde é utilizado PHP + HTML. O intuito é mostrar como pode rodar uma aplicação PHP com docker.
-- Para uso em produção é necessário tomar politicas de segurança, tanto na aplicação quanto nos arquivos docker e docker-compose.
+- Para uso em produção é necessário tomar políticas de segurança, tanto na aplicação quanto nos arquivos docker e docker-compose.
 
