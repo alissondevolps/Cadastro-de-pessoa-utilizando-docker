@@ -17,6 +17,6 @@ CREATE TABLE cliente(
 - http://localhost/home.php
 
 # Observação
-- A aplicação é extremamente básica, onde é utilzando apenas PHP + HTML. O intuito é mostrar como pode rodar uma aplicação PHP com docker.
+- A aplicação é extremamente básica, onde é utilizado PHP + HTML. O intuito é mostrar como pode rodar uma aplicação PHP com docker.
 - Para uso em produção é necessário tomar politicas de segunça, tanto na aplicação quanto nos arquivos docker e docker-compose.
 
